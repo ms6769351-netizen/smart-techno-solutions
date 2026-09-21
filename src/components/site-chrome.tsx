@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useLanguage } from "@/lib/i18n";
 import logo from "@/assets/logo.png";
@@ -8,16 +7,16 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { to: "/", label: t.nav.home },
-    { to: "/about", label: t.nav.about },
-    { to: "/services", label: t.nav.services },
-    { to: "/contact", label: t.nav.contact },
-  ] as const;
+    { href: "#home", label: t.nav.home },
+    { href: "#about", label: t.nav.about },
+    { href: "#services", label: t.nav.services },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-ink/70 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <a href="#home" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
             src={logo}
             alt={t.brand}
@@ -33,19 +32,17 @@ export function SiteHeader() {
               {t.brandLatin}
             </p>
           </div>
-        </Link>
+        </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-white/60 md:flex">
           {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              activeOptions={{ exact: link.to === "/" }}
+            <a
+              key={link.href}
+              href={link.href}
               className="transition-colors hover:text-white"
-              activeProps={{ className: "text-white" }}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -99,16 +96,14 @@ export function SiteHeader() {
         <nav className="border-t border-line/80 bg-ink/95 px-5 py-4 backdrop-blur-md md:hidden">
           <div className="flex flex-col gap-1">
             {links.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                activeOptions={{ exact: link.to === "/" }}
+              <a
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-panel hover:text-white"
-                activeProps={{ className: "bg-panel text-white" }}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
         </nav>
