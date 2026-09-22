@@ -48,35 +48,49 @@ const ar = {
   services: {
     kicker: "Services",
     title: "مجالات عملنا",
-    meta: "04 — Offerings",
+    meta: "02 — Divisions",
     intro:
       "نغطي أبعاداً مختلفة من الحياة الرقمية — من التطبيقات إلى الألعاب التعليمية، بخبرة مصرية ورؤية عالمية.",
-    items: [
-      {
-        num: "01",
-        tag: "Mobile",
-        title: "تطبيقات الموبايل",
-        desc: "تصميم وتطوير تطبيقات الموبايل التي تناسب جميع الأعمار وتتميز بسهولة الاستخدام وأداء سريع مهما كان الجهاز.",
+    programs: {
+      title: "برامجنا",
+      subtitle: "تطبيقات من صنعنا، جاهزة للاستخدام الآن.",
+      visit: "جرّب البرنامج",
+      scan: "امسح الرمز للتحميل",
+      comingSoon: "قريباً",
+      comingSoonDesc: "نجهّز مكان البرنامج — الرابط والصورة ورمز QR سيُضافون قريباً.",
+      hadana: {
+        name: "هدنة",
+        desc: "برنامج يساعد المستخدم على الاسترخاء وتنظيم التنفس وتقليل التوتر وتقليل أي طاقة سلبية ويساعده على الهدوء.",
+        url: "https://sokoon-wellness-app--ugareetjo.replit.app/",
       },
-      {
-        num: "02",
-        tag: "Web",
-        title: "مواقع الويب والأنظمة التفاعلية",
-        desc: "تصميم مواقع ويب احترافية وأنظمة تفاعلية جذابة تُبهر المستخدم وتسهّل عليه كل خطوة.",
+      masar: {
+        name: "مسار",
       },
-      {
-        num: "03",
-        tag: "Solutions",
-        title: "حلول برمجية",
-        desc: "حلول برمجية ذكية ومخصصة تُعالج احتياجاتك الحقيقية من أول سطر برمجي إلى الإطلاق.",
-      },
-      {
-        num: "04",
-        tag: "Games",
-        title: "ألعاب تفاعلية وتعليمية",
-        desc: "تصميم ألعاب تفاعلية وألعاب محاكاة وألعاب هدفها التعلم بأسلوب ممتع وقريب للجمهور.",
-      },
-    ],
+    },
+    offerings: {
+      title: "ما نقدمه لعملائنا",
+      subtitle: "خدماتنا الأساسية لتحويل فكرتك إلى منتج حقيقي.",
+      items: [
+        {
+          num: "01",
+          tag: "Flutter · Dart · React Native",
+          title: "تطبيقات الموبايل",
+          desc: "إنشاء برامج للموبايل بتصميمات مذهلة وبلغات Flutter وDart وReact Native لتحويل الأفكار إلى برامج واقعية.",
+        },
+        {
+          num: "02",
+          tag: "HTML · CSS · JS · Tailwind · React",
+          title: "مواقع الويب",
+          desc: "تصميم مواقع ويب تتميز بالسهولة والمرونة باستخدام أفضل التقنيات — نساعدك في إنشاء موقع شركتك وموقعك الشخصي.",
+        },
+        {
+          num: "03",
+          tag: "Games",
+          title: "الألعاب التفاعلية والتعليمية",
+          desc: "إنشاء الألعاب التفاعلية والألعاب التعليمية بأسلوب ممتع وقريب للجمهور.",
+        },
+      ],
+    },
   },
   contact: {
     kicker: "Contact",
@@ -132,35 +146,49 @@ const en: typeof ar = {
   services: {
     kicker: "Services",
     title: "What We Do",
-    meta: "04 — Offerings",
+    meta: "02 — Divisions",
     intro:
       "We cover different dimensions of digital life — from apps to educational games — with Egyptian expertise and a global vision.",
-    items: [
-      {
-        num: "01",
-        tag: "Mobile",
-        title: "Mobile Applications",
-        desc: "Design and development of mobile apps suitable for all ages, featuring ease of use and fast performance on any device.",
+    programs: {
+      title: "Our Programs",
+      subtitle: "Apps we built ourselves, ready to use now.",
+      visit: "Try the App",
+      scan: "Scan to download",
+      comingSoon: "Coming Soon",
+      comingSoonDesc: "We're preparing this program's spot — the link, image, and QR code will be added soon.",
+      hadana: {
+        name: "Hadana",
+        desc: "An app that helps the user relax, organize breathing, reduce stress and negative energy, and find calm.",
+        url: "https://sokoon-wellness-app--ugareetjo.replit.app/",
       },
-      {
-        num: "02",
-        tag: "Web",
-        title: "Websites & Interactive Systems",
-        desc: "Professional website design and attractive interactive systems that impress users and simplify every step.",
+      masar: {
+        name: "Masar",
       },
-      {
-        num: "03",
-        tag: "Solutions",
-        title: "Software Solutions",
-        desc: "Smart, custom software solutions that address your real needs — from the first line of code to launch.",
-      },
-      {
-        num: "04",
-        tag: "Games",
-        title: "Interactive & Educational Games",
-        desc: "Design of interactive games, simulation games, and games built for learning in a fun, relatable style.",
-      },
-    ],
+    },
+    offerings: {
+      title: "What We Offer Our Clients",
+      subtitle: "Our core services to turn your idea into a real product.",
+      items: [
+        {
+          num: "01",
+          tag: "Flutter · Dart · React Native",
+          title: "Mobile Applications",
+          desc: "Building mobile apps with stunning designs in Flutter, Dart, and React Native — turning ideas into real software.",
+        },
+        {
+          num: "02",
+          tag: "HTML · CSS · JS · Tailwind · React",
+          title: "Websites",
+          desc: "Website design that is simple and flexible using the best technologies — we help you build your company site and personal site.",
+        },
+        {
+          num: "03",
+          tag: "Games",
+          title: "Interactive & Educational Games",
+          desc: "Creating interactive games and educational games in a fun, relatable style.",
+        },
+      ],
+    },
   },
   contact: {
     kicker: "Contact",
