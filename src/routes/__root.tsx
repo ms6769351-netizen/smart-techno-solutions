@@ -110,6 +110,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap",
       },
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css",
+      },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
@@ -135,6 +139,22 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  // n8n chat widget
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "module";
+    script.textContent = `
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      createChat({
+        webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
+      });
+    `;
+    document.body.appendChild(script);
+    return () => {
+      script.remove();
+    };
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
