@@ -147,7 +147,7 @@ function RootComponent() {
     script.textContent = `
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
       createChat({
-        webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
+        webhookUrl: 'https://mohamedd14.app.n8n.cloud/webhook/742c7ef0-1c6b-4303-9922-7b935ffdcea9/chat'
       });
     `;
     document.body.appendChild(script);
