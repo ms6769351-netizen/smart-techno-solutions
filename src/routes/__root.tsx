@@ -159,7 +159,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-        <div className="min-h-screen bg-ink font-body text-white">
+        <div className="relative min-h-screen font-body text-white">
           <SiteHeader />
           <Outlet />
           <SiteFooter />
