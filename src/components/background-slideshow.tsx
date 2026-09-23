@@ -24,12 +24,12 @@ export function BackgroundSlideshow() {
           className="absolute inset-0 bg-cover bg-center transition-[opacity,transform] duration-[1400ms] ease-out"
           style={{
             backgroundImage: `url(${src})`,
-            opacity: i === index ? 0.34 : 0,
+            opacity: i === index ? 0.42 : 0,
             transform: i === index ? "scale(1.06)" : "scale(1)",
           }}
         />
       ))}
-      <div className="absolute inset-0 bg-ink/60" />
+      <div className="absolute inset-0 bg-ink/50" />
       <div
         className="absolute inset-0"
         style={{
