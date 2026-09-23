@@ -133,6 +133,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--color-ink);
   }
 
   * {
@@ -140,7 +141,7 @@
   }
 
   body {
-    background-color: var(--color-ink);
+    background-color: transparent;
     color: oklch(0.96 0.005 180);
     font-family: var(--font-body);
   }
