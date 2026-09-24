@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Smart Techno Solutions
+
+اصنع موقع احترافى ولوجو احترافى للموقع  لشركة برمجة اسم الشركة ( سمارت تكنو ,smart techno) اريد الموقع باالغه العربيه ويمكن التحويل للغة الانجليزية . الموقع اربع واجهات الوجهة الاولى هى الصفحة الرئيسية تحتوى على هذا العنوان ( تحويل الافكار الى حلول برمجية ) وبعدها هذا التعريف "ابتكار رقمي بهدف حقيقي؛ نقدم في سمارت تكنو حلولاً برمجية وتطبيقات تفاعلية صُممت خصيصاً لتلائم المستخدم . من الألعاب التي تعكس هويتنا، إلى الأدوات المالية والصحية التي تنظم حياتك، نضمن لك أداءً سريعاً وواجهات خالية من التعقيد تناسب جميع الفئات."  . فى الواجهة الثانية هى واجهة من نحن وهذة الواجهى تجتوى على تعريف شركتنا وماذا تقدم وتحتوى على هذا "شركة برمجية مصرية متخصصة في تصميم وتطوير تطبيقات الموبايل والحلول الرقمية التي تمس الواقع اليومي للمستخدم. نؤمن بأن التكنولوجيا الحقيقية هي التي تُصنع لفهم الشارع واحتياجات الأفراد، لذا نركز على تقديم منتجات برمجية تجمع بين البساطة، التفاعلية، والفاعلية المباشرة.
+
+تتنوع مجالات عملنا لتغطي أبعاداً مختلفة من حياة المستخدم اليومية؛ فنحن نبتكر حلولاً تفاعلية  تعكس هوية الشارع المصري بأسلوب ممتع وقريب للجمهور، ونطور أدوات مالية وحسابية ذكية تساعد الأفراد على متابعة حركة الأسواق (مثل الذهب) لاتخاذ قرارات واعية، بالإضافة إلى تقديم تطبيقات مخصصة لصحة ونمط الحياة تهدف إلى تنظيم اليوم، تقليل التوتر، وتعزيز الهدوء النفسي."   .  فى الواجهة الثالثة هى واجهة مجالات عملنا  " تصميم وتطوير تطبيقات الموبايل التى تناسب جميع الاعمار وتتميز بسهولة الاستخدام  , و تصميم مواقع الويب احترافية وانظمة تفاعلية جذابة , وحلول برمجية , وتصميم العاب تفاعلية و العاب المحاكاه والعاب الهدف منها التعلم " واخيرا واجهة التواصل اكتب فيها هيا نعمل معا وهذا هو لينك  التواصل " Info@smarttechno.app "
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a9ef181e-b543-4653-b374-e49268a46ee5).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
