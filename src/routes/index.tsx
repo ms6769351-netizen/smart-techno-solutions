@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { Reveal } from "@/hooks/use-reveal";
 import { BackgroundSlideshow } from "@/components/background-slideshow";
