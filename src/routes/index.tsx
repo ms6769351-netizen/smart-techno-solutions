@@ -251,7 +251,7 @@ function HomePage() {
                   <p className="mt-5 font-latin text-[11px] uppercase tracking-[0.2em] text-white/25">
                     {item.tag}
                   </p>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
