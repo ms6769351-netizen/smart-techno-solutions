@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { Reveal } from "@/hooks/use-reveal";
 import { BackgroundSlideshow } from "@/components/background-slideshow";
@@ -233,7 +233,11 @@ function HomePage() {
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {t.services.offerings.items.map((item, i) => (
               <Reveal key={item.num} delay={i * 120}>
-                <div className="group relative h-full overflow-hidden rounded-[20px] bg-panel/80 p-7 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40">
+                <Link
+                  to="/order/$type"
+                  params={{ type: (["mobile", "web", "games"] as const)[i] }}
+                  className="group relative block h-full overflow-hidden rounded-[20px] bg-panel/80 p-7 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40"
+                >
                   <div className="absolute inset-x-0 -top-px h-px scale-x-0 bg-gradient-to-r from-transparent via-brand to-transparent transition-transform duration-500 group-hover:scale-x-100" />
                   <div className="flex items-center justify-between">
                     <span className="grid size-12 place-items-center rounded-[10px] bg-brand/10 text-brand ring-1 ring-brand/20 transition-transform duration-300 group-hover:scale-110">
@@ -247,7 +251,7 @@ function HomePage() {
                   <p className="mt-5 font-latin text-[11px] uppercase tracking-[0.2em] text-white/25">
                     {item.tag}
                   </p>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
