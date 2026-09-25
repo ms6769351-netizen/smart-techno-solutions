@@ -2,8 +2,22 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { Reveal } from "@/hooks/use-reveal";
 import { BackgroundSlideshow } from "@/components/background-slideshow";
-import hadanaImg from "@/assets/hadana.jpg";
-import hadanaQr from "@/assets/hadana-qr.svg";
+import hodnaImg from "@/assets/prog-hodna.jpg";
+import saghaImg from "@/assets/prog-sagha.jpg";
+import masarImg from "@/assets/prog-masar.jpg";
+import qararImg from "@/assets/prog-qarar.jpg";
+import hodnaQr from "@/assets/qr-hodna.svg";
+import saghaQr from "@/assets/qr-sagha.svg";
+import masarQr from "@/assets/qr-masar.svg";
+import qararQr from "@/assets/qr-qarar.svg";
+
+const PROGRAMS: { key: string; img?: string; qr?: string; url?: string }[] = [
+  { key: "hodna", img: hodnaImg, qr: hodnaQr, url: "https://sokoon-wellness-app--ugareetjo.replit.app/" },
+  { key: "sagha", img: saghaImg, qr: saghaQr, url: "https://aurum-coral-alpha.vercel.app/" },
+  { key: "masar", img: masarImg, qr: masarQr, url: "https://masar-app-phi.vercel.app/" },
+  { key: "qarar", img: qararImg, qr: qararQr, url: "https://qrr-fwry--malakshaker429.replit.app/" },
+  { key: "rahma" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -145,75 +159,71 @@ function HomePage() {
             </p>
           </Reveal>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {/* Hadana */}
-            <Reveal>
-              <article className="group h-full overflow-hidden rounded-[24px] bg-panel/80 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40">
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={hadanaImg}
-                    alt={t.services.programs.hadana.name}
-                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent" />
-                </div>
-                <div className="p-7">
-                  <h4 className="font-display text-2xl font-bold text-brand">
-                    {t.services.programs.hadana.name}
-                  </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-white/60 [text-wrap:pretty]">
-                    {t.services.programs.hadana.desc}
-                  </p>
-                  <div className="mt-6 flex flex-wrap items-center gap-5">
-                    <a
-                      href={t.services.programs.hadana.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full bg-brand px-6 py-3 text-sm font-bold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-12px_rgba(16,185,129,0.8)]"
-                    >
-                      {t.services.programs.visit}
-                    </a>
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={hadanaQr}
-                        alt="QR"
-                        className="size-20 rounded-lg bg-white p-1 transition-transform duration-300 hover:scale-125"
-                      />
-                      <span className="max-w-[10ch] text-xs text-white/45">
-                        {t.services.programs.scan}
-                      </span>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {PROGRAMS.map((p, i) => {
+              const info = t.services.programs.list[i] ?? { name: p.key, desc: "" };
+              return (
+                <Reveal key={p.key} delay={(i % 3) * 120}>
+                  <article className="group flex h-full flex-col overflow-hidden rounded-[24px] bg-panel/80 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40">
+                    <div className="relative h-64 overflow-hidden bg-white/[0.02]">
+                      {p.img ? (
+                        <img
+                          src={p.img}
+                          alt={info.name}
+                          loading="lazy"
+                          className="size-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="grid size-full place-items-center">
+                          <span className="rounded-full bg-brand/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-brand/80">
+                            {t.services.programs.comingSoon}
+                          </span>
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-panel via-panel/10 to-transparent" />
                     </div>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
-
-            {/* Masar — placeholder */}
-            <Reveal delay={140}>
-              <article className="flex h-full flex-col overflow-hidden rounded-[24px] bg-panel/50 ring-1 ring-dashed ring-line backdrop-blur">
-                <div className="grid h-56 place-items-center bg-white/[0.02]">
-                  <span className="rounded-full bg-brand/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-brand/80">
-                    {t.services.programs.comingSoon}
-                  </span>
-                </div>
-                <div className="p-7">
-                  <h4 className="font-display text-2xl font-bold text-white/70">
-                    {t.services.programs.masar.name}
-                  </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-white/45 [text-wrap:pretty]">
-                    {t.services.programs.comingSoonDesc}
-                  </p>
-                  <div className="mt-6 flex items-center gap-4">
-                    <span className="rounded-full px-6 py-3 text-sm font-semibold text-white/30 ring-1 ring-line">
-                      {t.services.programs.visit}
-                    </span>
-                    <span className="grid size-20 place-items-center rounded-lg text-[10px] text-white/25 ring-1 ring-dashed ring-line">
-                      QR
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
+                    <div className="flex flex-1 flex-col p-7">
+                      <h4 className="font-display text-2xl font-bold text-brand">{info.name}</h4>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-white/60 [text-wrap:pretty]">
+                        {p.url ? info.desc : t.services.programs.comingSoonDesc}
+                      </p>
+                      <div className="mt-6 flex flex-wrap items-center gap-5">
+                        {p.url ? (
+                          <a
+                            href={p.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-full bg-brand px-6 py-3 text-sm font-bold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-12px_rgba(16,185,129,0.8)]"
+                          >
+                            {t.services.programs.visit}
+                          </a>
+                        ) : (
+                          <span className="rounded-full px-6 py-3 text-sm font-semibold text-white/30 ring-1 ring-line">
+                            {t.services.programs.visit}
+                          </span>
+                        )}
+                        {p.qr ? (
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={p.qr}
+                              alt="QR"
+                              className="size-20 rounded-lg bg-white p-1 transition-transform duration-300 hover:scale-125"
+                            />
+                            <span className="max-w-[10ch] text-xs text-white/45">
+                              {t.services.programs.scan}
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="grid size-20 place-items-center rounded-lg text-[10px] text-white/25 ring-1 ring-dashed ring-line">
+                            QR
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
 
           {/* Part 2 — Offerings */}
@@ -235,7 +245,7 @@ function HomePage() {
               <Reveal key={item.num} delay={i * 120}>
                 <Link
                   to="/order/$type"
-                  params={{ type: (["mobile", "web", "games"] as const)[i] }}
+                  params={{ type: (["mobile", "web", "games"] as const)[i] ?? "mobile" }}
                   className="group relative block h-full overflow-hidden rounded-[20px] bg-panel/80 p-7 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40"
                 >
                   <div className="absolute inset-x-0 -top-px h-px scale-x-0 bg-gradient-to-r from-transparent via-brand to-transparent transition-transform duration-500 group-hover:scale-x-100" />

@@ -58,14 +58,13 @@ const ar = {
       scan: "امسح الرمز للتحميل",
       comingSoon: "قريباً",
       comingSoonDesc: "نجهّز مكان البرنامج — الرابط والصورة ورمز QR سيُضافون قريباً.",
-      hadana: {
-        name: "هدنة",
-        desc: "برنامج يساعد المستخدم على الاسترخاء وتنظيم التنفس وتقليل التوتر وتقليل أي طاقة سلبية ويساعده على الهدوء.",
-        url: "https://sokoon-wellness-app--ugareetjo.replit.app/",
-      },
-      masar: {
-        name: "مسار",
-      },
+      list: [
+        { name: "هدنة", desc: "برنامج يساعد المستخدم على الاسترخاء وتنظيم التنفس وتقليل التوتر وتقليل أي طاقة سلبية ويساعده على الهدوء." },
+        { name: "صاغة", desc: "أداة ذكية لمتابعة أسعار الذهب وحساب قيمته لحظياً لاتخاذ قرارات شراء وبيع واعية." },
+        { name: "مسار", desc: "برنامج لتنظيم يومك ومهامك وأهدافك خطوة بخطوة في مسار واضح وبسيط." },
+        { name: "قرار فوري", desc: "أداة تساعدك على اتخاذ قراراتك بسرعة ووضوح بعيداً عن الحيرة والتردد." },
+        { name: "رحمة", desc: "" },
+      ],
     },
     offerings: {
       title: "ما نقدمه لعملائنا",
@@ -156,14 +155,13 @@ const en: typeof ar = {
       scan: "Scan to download",
       comingSoon: "Coming Soon",
       comingSoonDesc: "We're preparing this program's spot — the link, image, and QR code will be added soon.",
-      hadana: {
-        name: "Hadana",
-        desc: "An app that helps the user relax, organize breathing, reduce stress and negative energy, and find calm.",
-        url: "https://sokoon-wellness-app--ugareetjo.replit.app/",
-      },
-      masar: {
-        name: "Masar",
-      },
+      list: [
+        { name: "Hodna", desc: "An app that helps the user relax, organize breathing, reduce stress and negative energy, and find calm." },
+        { name: "Sagha", desc: "A smart tool to follow live gold prices and calculate its value for informed buy and sell decisions." },
+        { name: "Masar", desc: "Organize your day, tasks and goals step by step on a clear, simple path." },
+        { name: "Qarar Fawri", desc: "A tool that helps you make decisions quickly and clearly, without hesitation." },
+        { name: "Rahma", desc: "" },
+      ],
     },
     offerings: {
       title: "What We Offer Our Clients",
