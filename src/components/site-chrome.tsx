@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.png";
 
 export function SiteHeader() {
   const { lang, t, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSignedIn(!!data.session));
+    const { data } = supabase.auth.onAuthStateChange((_e, session) => setSignedIn(!!session));
+    return () => data.subscription.unsubscribe();
+  }, []);
 
   const links = [
     { href: "/#home", label: t.nav.home },
@@ -47,6 +56,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            to={signedIn ? "/account" : "/auth"}
+            className="rounded-full bg-brand px-4 py-2 text-xs font-bold text-ink transition hover:-translate-y-0.5"
+          >
+            {signedIn ? (lang === "ar" ? "حسابي" : "My account") : lang === "ar" ? "تسجيل الدخول" : "Sign in"}
+          </Link>
           <div className="flex items-center rounded-full bg-panel p-1 ring-1 ring-line">
             <button
               onClick={() => setLang("ar")}
