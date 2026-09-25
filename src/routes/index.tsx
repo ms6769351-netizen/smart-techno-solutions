@@ -245,7 +245,7 @@ function HomePage() {
               <Reveal key={item.num} delay={i * 120}>
                 <Link
                   to="/order/$type"
-                  params={{ type: (["mobile", "web", "games"] as const)[i] }}
+                  params={{ type: (["mobile", "web", "games"] as const)[i] ?? "mobile" }}
                   className="group relative block h-full overflow-hidden rounded-[20px] bg-panel/80 p-7 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40"
                 >
                   <div className="absolute inset-x-0 -top-px h-px scale-x-0 bg-gradient-to-r from-transparent via-brand to-transparent transition-transform duration-500 group-hover:scale-x-100" />
