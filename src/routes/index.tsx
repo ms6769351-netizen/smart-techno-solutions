@@ -161,7 +161,7 @@ function HomePage() {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PROGRAMS.map((p, i) => {
-              const info = t.services.programs.list[i];
+              const info = t.services.programs.list[i] ?? { name: p.key, desc: "" };
               return (
                 <Reveal key={p.key} delay={(i % 3) * 120}>
                   <article className="group flex h-full flex-col overflow-hidden rounded-[24px] bg-panel/80 ring-1 ring-line backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:ring-brand/40">
