@@ -39,7 +39,7 @@ Key features: ${data.features || "not specified"}
 Details: ${data.details}
 
 Rules:
-- price must be an integer in US dollars between 100 and 300, based on project size, complexity, value and number of pages.
+- price must be an integer in US dollars between 5000 and 15000, based on project size, complexity, value and number of pages.
 - days must be a realistic integer number of working days (between 7 and 120).
 - complexity is one of: low, medium, high.
 - summary: 2-3 sentences analyzing the project. breakdown: 3-6 short bullet points explaining what drives the price/time.
