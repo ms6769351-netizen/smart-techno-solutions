@@ -39,7 +39,7 @@ Key features: ${data.features || "not specified"}
 Details: ${data.details}
 
 Rules:
-- price must be an integer in Egyptian pounds between 5000 and 15000, based on project size, complexity, value and number of pages.
+- price must be an integer in US dollars between 100 and 300, based on project size, complexity, value and number of pages.
 - days must be a realistic integer number of working days (between 7 and 120).
 - complexity is one of: low, medium, high.
 - summary: 2-3 sentences analyzing the project. breakdown: 3-6 short bullet points explaining what drives the price/time.
@@ -64,7 +64,7 @@ Rules:
       const o = await result.output;
       return {
         ok: true as const,
-        price: Math.round(Math.min(15000, Math.max(5000, o.price)) / 100) * 100,
+        price: Math.round(Math.min(300, Math.max(100, o.price)) / 5) * 5,
         days: Math.round(Math.min(120, Math.max(7, o.days))),
         complexity: o.complexity,
         summary: o.summary,
