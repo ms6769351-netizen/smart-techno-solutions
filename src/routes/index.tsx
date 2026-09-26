@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { Reveal } from "@/hooks/use-reveal";
 import { BackgroundSlideshow } from "@/components/background-slideshow";
+import { ProgramsSlider, type Program } from "@/components/programs-slider";
 import hodnaImg from "@/assets/prog-hodna.jpg";
 import saghaImg from "@/assets/prog-sagha.jpg";
 import masarImg from "@/assets/prog-masar.jpg";
@@ -11,12 +12,12 @@ import saghaQr from "@/assets/qr-sagha.svg";
 import masarQr from "@/assets/qr-masar.svg";
 import qararQr from "@/assets/qr-qarar.svg";
 
-const PROGRAMS: { key: string; img?: string; qr?: string; url?: string }[] = [
-  { key: "hodna", img: hodnaImg, qr: hodnaQr, url: "https://sokoon-wellness-app--ugareetjo.replit.app/" },
-  { key: "sagha", img: saghaImg, qr: saghaQr, url: "https://aurum-coral-alpha.vercel.app/" },
-  { key: "masar", img: masarImg, qr: masarQr, url: "https://masar-app-phi.vercel.app/" },
-  { key: "qarar", img: qararImg, qr: qararQr, url: "https://qrr-fwry--malakshaker429.replit.app/" },
-  { key: "rahma" },
+const PROGRAMS: Program[] = [
+  { key: "hodna", img: hodnaImg, qr: hodnaQr, url: "https://sokoon-wellness-app--ugareetjo.replit.app/", chip: { ar: "الصحة النفسية", en: "Mental Health" } },
+  { key: "sagha", img: saghaImg, qr: saghaQr, url: "https://aurum-coral-alpha.vercel.app/", chip: { ar: "الأسواق المالية", en: "Financial Markets" } },
+  { key: "masar", img: masarImg, qr: masarQr, url: "https://masar-app-phi.vercel.app/", chip: { ar: "تنظيم اليوم", en: "Daily Planner" } },
+  { key: "qarar", img: qararImg, qr: qararQr, url: "https://qrr-fwry--malakshaker429.replit.app/", chip: { ar: "دعم القرار", en: "Decision Support" } },
+  { key: "rahma", chip: { ar: "قريباً", en: "Coming Soon" } },
 ];
 
 export const Route = createFileRoute("/")({
