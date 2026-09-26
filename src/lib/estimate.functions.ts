@@ -64,7 +64,7 @@ Rules:
       const o = await result.output;
       return {
         ok: true as const,
-        price: Math.round(Math.min(300, Math.max(100, o.price)) / 5) * 5,
+        price: Math.round(Math.min(15000, Math.max(5000, o.price)) / 50) * 50,
         days: Math.round(Math.min(120, Math.max(7, o.days))),
         complexity: o.complexity,
         summary: o.summary,
